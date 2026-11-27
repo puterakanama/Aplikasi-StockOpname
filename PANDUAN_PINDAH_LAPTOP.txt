@@ -1,0 +1,84 @@
+========================================================================
+   PANDUAN CARA COPY-PASTE & MENJALANKAN DI LAPTOP LAIN
+   Aplikasi SFP & Cisco Network Stock Opname Tracker
+========================================================================
+
+Aplikasi ini menggunakan SQLite sebagai database lokal (file: stockopname.db).
+Artinya, SEMUA DATA (1.200+ barang, switch Cisco, lokasi, dan log audit)
+tersimpan langsung di dalam folder ini secara mandiri (Portable).
+
+------------------------------------------------------------------------
+TIPS: CARA MENGOSONGKAN DATA PERCOBAAN (MULAI DARI NOL / BERSIH)
+------------------------------------------------------------------------
+Jika Anda ingin aplikasi di laptop baru benar-benar KOSONG (0 barang):
+
+Cara A (Praktis):
+1. Double-click file "BERSIHKAN_DATABASE_KOSONG.bat".
+2. Ketik Y lalu Enter.
+3. Seluruh 1.200+ data uji coba akan dibersihkan, dan file lama otomatis
+   dibackup ke "stockopname_backup_sebelum_reset.db".
+
+Cara B (Manual):
+1. Cukup HAPUS file "stockopname.db" di folder ini.
+2. Ketika Anda menjalankan "2_JALANKAN_APLIKASI.bat", sistem otomatis
+   membuat file database baru yang 100% masih bersih/kosong!
+
+------------------------------------------------------------------------
+LANGKAH 1: COPY FOLDER KE LAPTOP BARU
+------------------------------------------------------------------------
+1. Copy seluruh folder "Aplikasi Stockopname" ini ke Flashdisk, Harddisk
+   Eksternal, Google Drive, atau kirim via jaringan/WiFi.
+2. Paste folder ini di laptop tujuan (bebas ditaruh di mana saja,
+   misal: di Desktop, Drive D:\, atau Drive C:\).
+
+
+------------------------------------------------------------------------
+LANGKAH 2: PASTIKAN LAPTOP BARU MEMILIKI PYTHON (VERSI STABLE)
+------------------------------------------------------------------------
+1. Jika laptop baru belum ada Python (atau jika muncul error Visual C++):
+   - Buka: https://www.python.org/downloads/
+   - KLIK TOMBOL KUNING BESAR (Download Python 3.12 atau Python 3.13 STABLE).
+   - JANGAN mendownload versi "Pre-release / Alpha" seperti Python 3.15
+     karena versi alpha belum didukung oleh library resmi dan akan meminta C++.
+   - Saat proses install, WAJIB CENTANG kotak di bagian paling bawah installer:
+     [v] "Add python.exe to PATH"
+   - Lanjutkan klik "Install Now" sampai selesai.
+
+
+------------------------------------------------------------------------
+LANGKAH 3: SETUP DEPENDENCIES (CUKUP SEKALI SAJA)
+------------------------------------------------------------------------
+1. Buka folder aplikasi di laptop baru.
+2. Double-click (klik 2x) file:
+   >> 1_SETUP_PERTAMA_KALI.bat
+3. Tunggu hingga proses instalasi library (FastAPI, Pandas, Openpyxl, dll)
+   selesai dan muncul tulisan [BERHASIL].
+
+
+------------------------------------------------------------------------
+LANGKAH 4: JALANKAN APLIKASI
+------------------------------------------------------------------------
+1. Setiap kali ingin menggunakan aplikasi, cukup double-click:
+   >> 2_JALANKAN_APLIKASI.bat
+2. Jendela hitam command prompt akan muncul dan BROWSER AKAN OTOMATIS TERBUKA
+   menampilkan aplikasi di:
+   http://localhost:8000
+
+3. JANGAN TUTUP jendela command prompt hitam tersebut selama aplikasi
+   sedang digunakan. Jika sudah selesai bekerja, jendela command prompt
+   bisa ditutup (atau tekan Ctrl + C).
+
+
+------------------------------------------------------------------------
+BONUS: BUKA APLIKASI DARI HP TEKNISI (SCAN BARCODE VIA HP)
+------------------------------------------------------------------------
+1. Hubungkan HP teknisi ke Wi-Fi / Hotspot yang sama dengan laptop.
+2. Saat file "2_JALANKAN_APLIKASI.bat" dibuka, lihat alamat IP HP
+   yang ditampilkan di layar hitam, contoh:
+   http://192.168.1.50:8000
+3. Buka alamat tersebut di browser HP (Chrome/Safari).
+4. Anda bisa langsung scan barcode SFP atau Switch menggunakan kamera HP!
+
+========================================================================
+TIM TEKNISI & LOGISTIK COMPNET
+========================================================================
